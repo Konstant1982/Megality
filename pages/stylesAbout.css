@@ -19,8 +19,6 @@ body {
     }
 }
 
-
-
 .site-header {
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
     padding: 0px 0;
@@ -48,6 +46,11 @@ body {
     position: relative;
 }
 
+
+.active .nav-link {
+    color: #ffcc00;
+
+}
 .nav-link {
     color: #fff;
     text-transform: uppercase;
