@@ -112,4 +112,7 @@ ul li {
     margin-bottom: 10px;
 }
 
+.site-header .nav-link:hover {
+    color: #ddd;
+
 }
