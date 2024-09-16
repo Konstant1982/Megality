@@ -6,10 +6,85 @@ body {
 
 }
 
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0px;
+}
+
+/* Шапка и меню */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block; /* Показываем подменю при наведении на элемент */
+    }
+}
+
+.site-header {
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+    padding: 0px 0;
+    position: fixed; /* Фиксированное положение */
+    width: 100%;
+    z-index: 1000; /* Переопределяет другие элементы на странице */  
+    backdrop-filter: blur(1px); /* Размытие фона */  
+    clip-path: polygon(0 0, 90% 0, 70% 60%, 0% 120%); /* Вертикальный скос справа */
+}
+
+.navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start; /* Выравнивание меню по левому краю */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: left;
+    margin-right: auto;
+    margin-left: 0; /* Убираем автоматическое центрирование */
+}
+
+.nav-item {
+    position: relative;
+}
+
+
+.active .nav-link {
+    color: #ffcc00;
+
+}
+.nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-size: 0.9rem; /* Уменьшаем шрифт ссылок */
+}
+
+.nav-link:hover {
+    color: #ff8700;
+}
+
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+	display: block;
+    background-color: #333;
+}
+
+/* Логотип */
+.logo-container {
+    padding: 15px 0;
+    position: fixed;
+    top: 15px; /* Расположение по высоте */
+    right: 15px; /* Расположение по горизонтали */
+    z-index: 1001; /* Выше шапки */
+}
+
+.logo-img {
+    max-height: 25px;
+    width: auto;
 }
 
 
