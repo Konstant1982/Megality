@@ -61,19 +61,6 @@ body {
     background-color: #333;
 }
 
-/* Логотип */
-.logo-container {
-    padding: 15px 0;
-    position: fixed;
-    top: 15px; /* Расположение по высоте */
-    right: 15px; /* Расположение по горизонтали */
-    z-index: 1001; /* Выше шапки */
-}
-
-.logo-img {
-    max-height: 25px;
-    width: auto;
-}
 
 
 
