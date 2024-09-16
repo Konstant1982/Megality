@@ -40,6 +40,11 @@ body {
     position: relative;
 }
 
+
+.active .nav-link {
+    color: #ffcc00;
+
+}
 .nav-link {
     color: #fff;
     text-transform: uppercase;
@@ -111,8 +116,5 @@ ul li {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
-
-.site-header .nav-link:hover {
-    color: #ddd;
 
 }
