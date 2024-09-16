@@ -1,3 +1,11 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
 /* Шапка и меню */
 @media (min-width: 992px) {
     .navbar .dropdown:hover .dropdown-menu {
@@ -71,22 +79,6 @@
 
 
 /* Основные стили */
-/* Общие стили */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-
-}
-/*body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}*/
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
