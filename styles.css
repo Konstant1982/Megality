@@ -16,7 +16,7 @@ body {
 
 .site-header {
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
-    padding: 15px 0;
+    padding: 0px 0;
     position: fixed; /* Фиксированное положение */
     width: 100%;
     z-index: 1000; /* Переопределяет другие элементы на странице */  
