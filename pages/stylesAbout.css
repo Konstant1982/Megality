@@ -114,21 +114,4 @@ ul li {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
-
-
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-    .site-header {
-        text-align: center;
-    }
-
-    .site-header .logo {
-        margin-bottom: 15px;
-    }
-
-    .site-header .navbar-nav {
-        margin-left: 0;
-    }
-
 }
