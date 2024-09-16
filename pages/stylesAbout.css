@@ -6,6 +6,12 @@ body {
 
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
 /* Шапка и меню */
 @media (min-width: 992px) {
     .navbar .dropdown:hover .dropdown-menu {
