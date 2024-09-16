@@ -1,0 +1,145 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.75em;
+    margin-top: 15px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Стили для заголовка и меню */
+.site-header {
+    background-color: #222;
+    padding: 20px 0;
+}
+
+.site-header .logo img {
+    max-width: 150px;
+}
+
+.site-header .navbar {
+    margin: 0;
+}
+
+.site-header .navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-header .nav-link {
+    color: #fff;
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.site-header .nav-link:hover {
+    color: #ddd;
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.active .nav-link {
+    color: #ffcc00;
+}
+
+/* Стили для секции "About" */
+.about-section {
+    background-color: #fff;
+    padding: 60px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.about-section h2 {
+    color: #ffcc00;
+    font-size: 2em;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.about-section ul li {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.about-section ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .site-header {
+        text-align: center;
+    }
+
+    .site-header .logo {
+        margin-bottom: 15px;
+    }
+
+    .site-header .navbar-nav {
+        margin-left: 0;
+    }
+
+    .about-section {
+        padding: 40px 20px;
+    }
+}
