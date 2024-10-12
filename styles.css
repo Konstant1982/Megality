@@ -77,52 +77,6 @@ body {
     width: auto;
 }
 
-.navbar-toggler {
-    border: none;
-    background: none;
-    padding: 0;
-}
-
-.navbar-toggler-icon {
-    display: block;
-    position: relative;
-    width: 30px;
-    height: 2px;
-    background-color: #000;
-    transition: all 0.3s ease;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    background-color: #000;
-    transition: all 0.3s ease;
-}
-
-.navbar-toggler-icon::before {
-    top: -8px;
-}
-
-.navbar-toggler-icon::after {
-    top: 8px;
-}
-
-/* Эффект при наведении */
-.navbar-toggler:hover .navbar-toggler-icon {
-    transform: scale(0.8); /* Уменьшаем центральную линию */
-}
-
-.navbar-toggler:hover .navbar-toggler-icon::before {
-    transform: translate(5px, 5px) scale(1.1); /* Смещение и увеличение верхней линии */
-}
-
-.navbar-toggler:hover .navbar-toggler-icon::after {
-    transform: translate(5px, -5px) scale(1.1); /* Смещение и увеличение нижней линии */
-}
-
 /* Карусель */
 .carousel-section {
     position: relative;
