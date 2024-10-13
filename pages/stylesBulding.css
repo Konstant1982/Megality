@@ -2,16 +2,8 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 1px;
+    padding: 0;
     margin-top: 0;
-
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px;
-    
 }
 
 /* Шапка и меню */
@@ -20,6 +12,8 @@ body {
         display: block; /* Показываем подменю при наведении на элемент */
     }
 }
+
+
 
 .site-header {
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
@@ -48,11 +42,6 @@ body {
     position: relative;
 }
 
-
-.active .nav-link {
-    color: #ffcc00;
-
-}
 .nav-link {
     color: #fff;
     text-transform: uppercase;
@@ -88,94 +77,43 @@ body {
     width: auto;
 }
 
-/* Основные стили */
-
-h1, h2, h3 {
-    color: #333;
+/* Карусель */
+.carousel-section {
+    position: relative;
+    height: 100vh; /* Занимает весь видимый экран */
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.carousel-inner img {
+    height: 100vh; /* Растягивает изображение на всю высоту экрана */
+    object-fit: cover; /* Сохраняет пропорции изображения */
 }
 
-h2 {
-    font-size: 2em;
-    margin-top: 20px;
+.carousel-caption {
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-h3 {
-    font-size: 1.75em;
-    margin-top: 15px;
+.carousel-caption h5 {
+    font-size: 2.5rem; /* Размер заголовка */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
-p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
+.carousel-caption p {
+    font-size: 1.25rem; /* Размер текста */
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 15px;
+/* Контролы карусели */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
 }
 
-ul li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-/* Стили для секции "About" */
-.about-section {
-    background-color: #fff;
-    padding: 60px 0;
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-}
-
-.about-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.about-section h2 {
-    color: #ffcc00;
-    font-size: 2em;
-}
-
-.about-section p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    color: #555;
-}
-
-.about-section ul li {
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 10px;
-}
-
-.about-section ul {
-    list-style: disc;
-    margin-left: 20px;
-}
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-    .site-header {
-        text-align: center;
-    }
-
-    .site-header .logo {
-        margin-bottom: 15px;
-    }
-
-    .site-header .navbar-nav {
-        margin-left: 0;
-    }
-
-    .about-section {
-        padding: 40px 20px;
-    }
-
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    border-radius: 50%;
 }
