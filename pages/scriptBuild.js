@@ -12,8 +12,7 @@ $(document).ready(function() {
     adjustCarouselHeight(); // Применяем на загрузке
     $(window).resize(adjustCarouselHeight); // Применяем при изменении размера окна
 
-    
-$(document).ready(function() {
+    // Перетаскивание карусели
     let isDragging = false;
     let startX;
     let scrollLeft;
@@ -37,7 +36,4 @@ $(document).ready(function() {
         const walk = (x - startX) * 2; // Вычисляем расстояние перетаскивания
         inner.scrollLeft(scrollLeft - walk); // Устанавливаем новое значение прокрутки
     });
-});
-
-
 });
