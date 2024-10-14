@@ -39,4 +39,16 @@ $(document).ready(function() {
         const walk = (y - startY); // Вычисляем расстояние перемещения
         inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
 });
+
+        $(document).ready(function() {
+    // Переключение зума на мобильных устройствах при нажатии
+    $('.carousel-item img').on('click touchstart', function() {
+        const isZoomed = $(this).hasClass('zoomed');
+        
+        if (!isZoomed) {
+            $(this).addClass('zoomed').css('transform', 'scale(1.5)');
+        } else {
+            $(this).removeClass('zoomed').css('transform', 'scale(1)');
+        }
+    });
 });
