@@ -86,6 +86,7 @@ body {
 }    
 
 .carousel-item {
+    display: flex; /* Используйте flexbox для центрирования */
     transition: height 0.5s ease-in-out;
     height: 100vh; /* Высота элементов карусели */
     overflow: hidden; /* Скрываем лишнее содержимое */
