@@ -38,5 +38,58 @@ $(document).ready(function() {
         const y = pageY - inner.position().top; // Текущая вертикальная позиция
         const walk = (y - startY); // Вычисляем расстояние перемещения
         inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
+
+        // Инициализация PhotoSwipe
+var initPhotoSwipeFromDOM = function(gallerySelector) {
+    var parseThumbnailElements = function(el) {
+        var thumbElements = el.getElementsByTagName('a'),
+            items = [],
+            size,
+            item;
+
+        for (var i = 0; i < thumbElements.length; i++) {
+            var link = thumbElements[i],
+                size = link.getAttribute('data-size').split('x'),
+                item = {
+                    src: link.getAttribute('href'),
+                    w: parseInt(size[0], 10),
+                    h: parseInt(size[1], 10)
+                };
+            items.push(item);
+        }
+        return items;
+    };
+
+    var openPhotoSwipe = function(index, galleryElement) {
+        var pswpElement = document.querySelectorAll('.pswp')[0],
+            gallery,
+            options,
+            items;
+
+        items = parseThumbnailElements(galleryElement);
+
+        options = {
+            index: index,
+            bgOpacity: 0.8,
+            showHideOpacity: true
+        };
+
+        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    };
+
+    var galleryElements = document.querySelectorAll(gallerySelector);
+    for (var i = 0; i < galleryElements.length; i++) {
+        galleryElements[i].onclick = function(e) {
+            e.preventDefault();
+            var index = Array.prototype.indexOf.call(galleryElements, this);
+            openPhotoSwipe(index, this.parentNode);
+        };
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    initPhotoSwipeFromDOM('.carousel-item a');
+});
 });  
 });
