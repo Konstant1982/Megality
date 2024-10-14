@@ -79,7 +79,8 @@ body {
 
 /* Карусель */
 .carousel-section {
-    height: 80vh; /* Занимает весь видимый экран */
+    position: relative;
+    height: 100vh; /* Занимает весь видимый экран */
     overflow-y: scroll; /* Включаем вертикальную прокрутку */
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */     
 }    
@@ -90,7 +91,7 @@ body {
 }
 
 carousel-inner {
-    display: flex; /* Включаем Flexbox */
+    display: block; /* Для вертикального размещения элементов */
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
     max-height: none; /* Убираем ограничение по высоте */
@@ -99,6 +100,7 @@ carousel-inner {
 .carousel-inner img {
     width: 100%; /* Занимает всю ширину */
     height: auto; /* Высота автоматически, чтобы сохранить пропорции */
+    max-height: 100%; /* Ограничиваем высоту в пределах контейнера */
     max-height: none; /* Позволяем изображению иметь свою высоту */
     object-fit: cover; /* Масштабируем изображение для заполнения контейнера */
 }
