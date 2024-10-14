@@ -12,46 +12,31 @@ $(document).ready(function() {
     adjustCarouselHeight(); // Применяем на загрузке
     $(window).resize(adjustCarouselHeight); // Применяем при изменении размера окна
 
-    // Перетаскивание карусели
+    // Перемещенеи фото
+    $(document).ready(function() {
     let isDragging = false;
-    let startX;
-    let scrollLeft;
+    let startY;
+    let scrollTop;
 
     const inner = $('.carousel-inner');
 
-    inner.on('mousedown', (e) => {
+    inner.on('mousedown touchstart', (e) => {
         isDragging = true;
-        startX = e.pageX - inner.position().left; // Запоминаем начальную позицию мыши
-        scrollLeft = inner.scrollLeft(); // Получаем текущее значение прокрутки
+        const pageY = e.type === 'mousedown' ? e.pageY : e.originalEvent.touches[0].pageY;
+        startY = pageY - inner.position().top; // Запоминаем начальную вертикальную позицию
+        scrollTop = inner.scrollTop(); // Получаем текущее значение вертикальной прокрутки
     });
 
-    inner.on('mouseleave mouseup', () => {
+    inner.on('mouseleave mouseup touchend', () => {
         isDragging = false; // Останавливаем перетаскивание
     });
 
-    inner.on('mousemove', (e) => {
+    inner.on('mousemove touchmove', (e) => {
         if (!isDragging) return; // Если не нажато, ничего не делаем
         e.preventDefault(); // Предотвращаем выделение текста
-        const x = e.pageX - inner.position().left; // Текущая позиция мыши
-        const walk = (x - startX) * 2; // Вычисляем расстояние перетаскивания
-        inner.scrollLeft(scrollLeft - walk); // Устанавливаем новое значение прокрутки
-    });
-
-    inner.on('touchstart', (e) => {
-    isDragging = true;
-    startX = e.originalEvent.touches[0].pageX - inner.position().left; // Используем координаты касания
-    scrollLeft = inner.scrollLeft();
-});
-
-inner.on('touchend mouseleave mouseup', () => {
-    isDragging = false; // Останавливаем перетаскивание
-});
-
-inner.on('touchmove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.originalEvent.touches[0].pageX - inner.position().left; // Текущая позиция касания
-    const walk = (x - startX) * 1.2; // Вычисляем расстояние перетаскивания
-    inner.scrollLeft(scrollLeft - walk);
+        const pageY = e.type === 'mousemove' ? e.pageY : e.originalEvent.touches[0].pageY;
+        const y = pageY - inner.position().top; // Текущая вертикальная позиция
+        const walk = (y - startY); // Вычисляем расстояние перемещения
+        inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
 });
 });
