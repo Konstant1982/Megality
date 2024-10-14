@@ -89,6 +89,7 @@ body {
     transition: height 0.5s ease-in-out;
     height: auto; /* Высота элементов карусели */
     overflow: hidden; /* Скрываем лишнее содержимое */
+    flex: 0 0 auto; /* Элементы карусели не растягиваются */
 }
 
 .carousel-item img {
@@ -99,12 +100,14 @@ body {
 }
 
 .carousel-inner {
-    display: block;
+    display: flex;
     flex-direction: column; /* Вертикальное размещение элементов */
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
     max-height: 100vh; /* Ограничиваем высоту карусели */
     overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    overflow-x: auto; /* Разрешаем горизонтальную прокрутку */
+    scroll-behavior: smooth; /* Гладкая прокрутка */
 }
 
 .carousel-inner img {
