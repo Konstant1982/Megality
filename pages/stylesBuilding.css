@@ -138,7 +138,7 @@ body {
 
 /* Контролы карусели */
 .carousel-control-prev, .carousel-control-next {
-    width: 5%;
+    width: 15%;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
