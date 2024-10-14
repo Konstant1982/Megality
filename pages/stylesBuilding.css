@@ -138,11 +138,23 @@ body {
 
 /* Контролы карусели */
 .carousel-control-prev, .carousel-control-next {
-    width: 15%;
+    width: 25%;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
     border-radius: 50%;
+}
+
+.zoom-container {
+    overflow: hidden; /* Скрываем содержимое за пределами контейнера */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.zoom-container img {
+    transition: transform 0.3s ease; /* Гладкая анимация зума */
+    cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
 
