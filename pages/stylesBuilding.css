@@ -106,7 +106,6 @@ body {
     justify-content: center; /* Центрируем по горизонтали */
     max-height: 100vh; /* Ограничиваем высоту карусели */
     overflow-y: auto; /* Добавляем вертикальную прокрутку */
-    overflow-x: auto; /* Разрешаем горизонтальную прокрутку */
     scroll-behavior: smooth; /* Гладкая прокрутка */
 }
 
