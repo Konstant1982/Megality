@@ -36,4 +36,22 @@ $(document).ready(function() {
         const walk = (x - startX) * 2; // Вычисляем расстояние перетаскивания
         inner.scrollLeft(scrollLeft - walk); // Устанавливаем новое значение прокрутки
     });
+
+    inner.on('touchstart', (e) => {
+    isDragging = true;
+    startX = e.originalEvent.touches[0].pageX - inner.position().left; // Используем координаты касания
+    scrollLeft = inner.scrollLeft();
+});
+
+inner.on('touchend mouseleave mouseup', () => {
+    isDragging = false; // Останавливаем перетаскивание
+});
+
+inner.on('touchmove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.originalEvent.touches[0].pageX - inner.position().left; // Текущая позиция касания
+    const walk = (x - startX) * 2; // Вычисляем расстояние перетаскивания
+    inner.scrollLeft(scrollLeft - walk);
+});
 });
