@@ -77,30 +77,30 @@ body {
     width: auto;
 }
 
- 
 /* Карусель */
 .carousel-section {
-    height: 80vh; /* Высота секции 80% экрана */
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
-}
+    position: relative;
+    height: 100vh; /* Занимает весь видимый экран */
+    overflow: hidden;     
+}    
 
 .carousel-item {
-    height: auto; /* Адаптивная высота элементов карусели */
     transition: height 0.5s ease-in-out;
 }
 
-.carousel-inner {
-    display: block; /* Вертикальное размещение для прокрутки */
-    max-height: 80vh; /* Ограничение высоты карусели */
+carousel-inner {
+    display: flex; /* Включаем Flexbox */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    height: 100%; /* Высота 100% от родительского элемента */
 }
 
 .carousel-inner img {
-    width: 100%;
-    max-height:  Auto; /* Ограничиваем высоту изображения в пределах контейнера */
-    object-fit: contain; /* Сохраняем пропорции без обрезки */
+    width: auto; /* Занимает всю ширину */
+    height: 100%; /* Высота автоматически, чтобы сохранить пропорции */
+    min-height: 100vh; /* Минимальная высота 100vh для растяжения изображения */
+    object-fit: cover; /* Сохраняет пропорции изображения */
 }
-
 
 .carousel-caption {
     bottom: 20px;
