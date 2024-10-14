@@ -80,7 +80,6 @@ body {
 /* Карусель */
 .carousel-section {
     position: relative;
-    min-height: 100vh; /* Минимальная высота карусели — один экран */
     overflow: hidden;  /* Оставляем изображения внутри секции */
 }
 
