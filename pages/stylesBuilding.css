@@ -81,30 +81,38 @@ body {
 .carousel-section {
     position: relative;
     height: 100vh; /* Занимает весь видимый экран */
-    overflow: hidden; /* Отключаем прокрутку для контейнера карусели */     
-}    
-
-.carousel-inner {
-    display: flex; /* Используем flexbox для вертикального размещения */
-    flex-direction: column; /* Вертикальное размещение элементов */
-    height: 100%; /* Занимает всю высоту родительского контейнера */
-    max-height: 100vh; /* Ограничиваем высоту карусели */
     overflow-y: auto; /* Включаем вертикальную прокрутку */
-    scroll-behavior: smooth; /* Гладкая прокрутка */
-}
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */     
+}    
 
 .carousel-item {
     transition: height 0.5s ease-in-out;
-    height: 100vh; /* Высота элементов карусели занимает весь экран */
-    display: flex; /* Используем flexbox для центрирования изображений */
-    align-items: center; /* Центрируем по вертикали */
-    justify-content: center; /* Центрируем по горизонтали */
+    height: auto; /* Высота элементов карусели */
+    overflow: hidden; /* Скрываем лишнее содержимое */
+    flex: 0 0 auto; /* Элементы карусели не растягиваются */
 }
 
 .carousel-item img {
-    max-width: 100%; /* Адаптивная ширина изображения */
-    height: auto; 
-    max-height: 100%; /* Ограничиваем высоту изображения */
+  max-width: 100%; /* Адаптивная ширина изображения */
+  height: auto; 
+  max-height: 100%; /* Ограничиваем высоту изображения */
+  object-fit: cover; /* Масштабируем изображение для заполнения контейнера */
+}
+
+.carousel-inner {
+    display: block;
+    flex-direction: column; /* Вертикальное размещение элементов */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    max-height: 100vh; /* Ограничиваем высоту карусели */
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    scroll-behavior: smooth; /* Гладкая прокрутка */
+}
+
+.carousel-inner img {
+    width: 100%; /* Занимает всю ширину */
+    height: auto; /* Высота автоматически, чтобы сохранить пропорции */
+    max-height: 100%; /* Ограничиваем высоту в пределах контейнера */
     object-fit: cover; /* Масштабируем изображение для заполнения контейнера */
 }
 
@@ -136,4 +144,3 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
     border-radius: 50%;
 }
-
