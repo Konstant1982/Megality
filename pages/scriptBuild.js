@@ -38,5 +38,31 @@ $(document).ready(function() {
         const y = pageY - inner.position().top; // Текущая вертикальная позиция
         const walk = (y - startY); // Вычисляем расстояние перемещения
         inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
+
+        document.addEventListener('DOMContentLoaded', function () {
+    // Выбираем все изображения в карусели
+    const zoomContainers = document.querySelectorAll('.zoom-container');
+
+    zoomContainers.forEach(container => {
+        const img = container.querySelector('img');
+
+        // Инициализация Panzoom для каждого изображения
+        const panzoomInstance = Panzoom(img, {
+            maxScale: 3, // Максимальный зум
+            contain: 'outside' // Позволяет перемещать изображение за пределы контейнера
+        });
+
+        // Обработчик для клика по изображению (зум)
+        container.addEventListener('click', function() {
+            if (panzoomInstance.getScale() === 1) {
+                panzoomInstance.zoomIn(); // Увеличить изображение
+                img.style.cursor = 'zoom-out'; // Меняем курсор на "уменьшить"
+            } else {
+                panzoomInstance.zoomOut(); // Уменьшить изображение
+                img.style.cursor = 'zoom-in'; // Возвращаем курсор на "увеличить"
+            }
+        });
+    });
+});
 });  
 });
