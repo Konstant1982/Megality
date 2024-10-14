@@ -90,6 +90,11 @@ body {
     height: auto; /* Высота элементов карусели */
 }
 
+.carousel-item img {
+  max-width: 100%; /* Адаптивная ширина изображения */
+  height: auto; /* Автоматическая высота */
+}
+
 carousel-inner {
     display: block; /* Для вертикального размещения элементов */
     align-items: center; /* Центрируем по вертикали */
