@@ -81,7 +81,8 @@ body {
 .carousel-section {
     position: relative;
     height: 100vh; /* Занимает весь видимый экран */
-    overflow: hidden;     
+    overflow-y: scroll; /* Включаем вертикальную прокрутку */
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */     
 }    
 
 .carousel-item {
