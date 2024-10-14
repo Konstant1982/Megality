@@ -94,7 +94,6 @@ carousel-inner {
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
     max-height: none; /* Убираем ограничение по высоте */
-    height: auto; /* Высота контейнера адаптивная */
 }
 
 .carousel-inner img {
