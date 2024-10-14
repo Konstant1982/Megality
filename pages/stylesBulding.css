@@ -84,10 +84,17 @@ body {
     overflow: hidden;
 }
 
+carousel-inner {
+    display: flex; /* Включаем Flexbox */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    height: 100%; /* Высота 100% от родительского элемента */
+}
+
 .carousel-inner img {
     width: 100%; /* Занимает всю ширину */
-    align-items: center; /* Центрирует по высоте */
-    height: 100vh; /* Растягивает изображение на всю высоту экрана */
+    height: auto; /* Высота автоматически, чтобы сохранить пропорции */
+    min-height: 100vh; /* Минимальная высота 100vh для растяжения изображения */
     object-fit: cover; /* Сохраняет пропорции изображения */
 }
 
