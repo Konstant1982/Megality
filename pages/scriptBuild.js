@@ -5,8 +5,12 @@ $(window).on('load', function() {
 $(document).ready(function() {
     function adjustCarouselHeight() {
         let windowHeight = $(window).height();
-        $('.carousel-inner').css('height', windowHeight);
-        $('.carousel-item').css('height', windowHeight);
+        
+        // Отнимаем от высоты возможные элементы интерфейса или отступы
+        let adjustedHeight = windowHeight - 100; // Можно настроить этот отступ под нужды
+        
+        $('.carousel-inner').css('height', adjustedHeight);
+        $('.carousel-item').css('height', adjustedHeight);
     }
 
     adjustCarouselHeight(); // Применяем на загрузке
