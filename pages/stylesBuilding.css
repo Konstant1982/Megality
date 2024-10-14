@@ -77,22 +77,35 @@ body {
     width: auto;
 }
 
+ 
 /* Карусель */
 .carousel-section {
     position: relative;
-    height: 100vh; /* Занимает весь видимый экран */
-    overflow: hidden;     
-}    
+    height: 80vh; /* Высота 80% от видимой части экрана */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+}
+
+/* Для экранов с небольшой высотой */
+@media (max-height: 500px) {
+    .carousel-section {
+        height: 100vh; /* 100% высоты экрана для маленьких экранов */
+    }
+}
+
+/* Для экранов с высотой более 1200px */
+@media (min-height: 1200px) {
+    .carousel-section {
+        height: 70vh; /* Ограничиваем высоту на больших экранах */
+    }
+}
+
+.carousel-inner {
+    display: block; /* Вертикальное размещение для прокрутки */
+}
 
 .carousel-item {
     transition: height 0.5s ease-in-out;
-}
-
-carousel-inner {
-    display: flex; /* Включаем Flexbox */
-    align-items: center; /* Центрируем по вертикали */
-    justify-content: center; /* Центрируем по горизонтали */
-    height: 100%; /* Высота 100% от родительского элемента */
 }
 
 .carousel-inner img {
