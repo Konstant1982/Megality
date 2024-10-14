@@ -80,53 +80,20 @@ body {
 /* Карусель */
 .carousel-section {
     position: relative;
-    height: 100vh; /* Занимает весь видимый экран */
-    overflow: hidden;
+    min-height: 100vh; /* Минимальная высота карусели — один экран */
+    overflow: hidden;  /* Оставляем изображения внутри секции */
 }
 
-.carousel-item {
-    transition: height 0.5s ease-in-out;
-}
-
-carousel-inner {
-    display: flex; /* Включаем Flexbox */
+/* Убираем фиксированную высоту */
+.carousel-inner {
+    display: flex;
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
-    height: 100%; /* Высота 100% от родительского элемента */
+    min-height: 100vh; /* Минимальная высота 100vh */
 }
 
 .carousel-inner img {
     width: auto; /* Занимает всю ширину */
     height: 100%; /* Высота автоматически, чтобы сохранить пропорции */
-    min-height: 100vh; /* Минимальная высота 100vh для растяжения изображения */
-    object-fit: cover; /* Сохраняет пропорции изображения */
-}
-
-.carousel-caption {
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-caption h5 {
-    font-size: 2.5rem; /* Размер заголовка */
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.carousel-caption p {
-    font-size: 1.25rem; /* Размер текста */
-}
-
-/* Контролы карусели */
-.carousel-control-prev, .carousel-control-next {
-    width: 5%;
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-    border-radius: 50%;
+    object-fit: cover; /* Обрезка изображения для сохранения пропорций */
 }
