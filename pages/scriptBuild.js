@@ -18,25 +18,24 @@ $(document).ready(function() {
     let startX;
     let scrollLeft;
 
-    const carousel = $('#carouselExampleCaptions');
     const inner = $('.carousel-inner');
 
     inner.on('mousedown', (e) => {
         isDragging = true;
-        startX = e.pageX - inner.position().left;
-        scrollLeft = inner.scrollLeft();
+        startX = e.pageX - inner.position().left; // Запоминаем начальную позицию мыши
+        scrollLeft = inner.scrollLeft(); // Получаем текущее значение прокрутки
     });
 
     inner.on('mouseleave mouseup', () => {
-        isDragging = false;
+        isDragging = false; // Останавливаем перетаскивание
     });
 
     inner.on('mousemove', (e) => {
-        if (!isDragging) return; // если не нажато, не выполняем
-        e.preventDefault(); // предотвращаем выделение текста
-        const x = e.pageX - inner.position().left;
-        const walk = (x - startX) * 2; // множитель для скорости прокрутки
-        inner.scrollLeft = scrollLeft - walk; // перемещение карусели
+        if (!isDragging) return; // Если не нажато, ничего не делаем
+        e.preventDefault(); // Предотвращаем выделение текста
+        const x = e.pageX - inner.position().left; // Текущая позиция мыши
+        const walk = (x - startX) * 2; // Вычисляем расстояние перетаскивания
+        inner.scrollLeft(scrollLeft - walk); // Устанавливаем новое значение прокрутки
     });
 });
 
