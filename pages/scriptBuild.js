@@ -1,19 +1,29 @@
-$(window).on('load', function() {
-    $('#carouselExampleCaptions').carousel(); // Запускаем карусель после полной загрузки
-});
+$(document).ready(function () {
+    // Инициализация Panzoom сразу после загрузки страницы
+    const zoomContainers = document.querySelectorAll('.zoom-container');
 
-$(document).ready(function() {
-    function adjustCarouselHeight() {
-        let windowHeight = $(window).height();
-        $('.carousel-inner').css('height', windowHeight);
-        $('.carousel-item').css('height', windowHeight);
-    }
+    zoomContainers.forEach(container => {
+        const img = container.querySelector('img');
 
-    adjustCarouselHeight(); // Применяем на загрузке
-    $(window).resize(adjustCarouselHeight); // Применяем при изменении размера окна
+        // Инициализация Panzoom для каждого изображения
+        const panzoomInstance = Panzoom(img, {
+            maxScale: 3, // Максимальный зум
+            contain: 'outside' // Позволяет перемещать изображение за пределы контейнера
+        });
 
-    // Перемещенеи фото
-    $(document).ready(function() {
+        // Обработчик для клика по изображению (зум)
+        container.addEventListener('click', function () {
+            if (panzoomInstance.getScale() === 1) {
+                panzoomInstance.zoomIn(); // Увеличить изображение
+                img.style.cursor = 'zoom-out'; // Меняем курсор на "уменьшить"
+            } else {
+                panzoomInstance.zoomOut(); // Уменьшить изображение
+                img.style.cursor = 'zoom-in'; // Возвращаем курсор на "увеличить"
+            }
+        });
+    });
+
+    // Остальной код для перетаскивания карусели (если нужен)
     let isDragging = false;
     let startY;
     let scrollTop;
@@ -38,31 +48,6 @@ $(document).ready(function() {
         const y = pageY - inner.position().top; // Текущая вертикальная позиция
         const walk = (y - startY); // Вычисляем расстояние перемещения
         inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
-
-        document.addEventListener('DOMContentLoaded', function () {
-    // Выбираем все изображения в карусели
-    const zoomContainers = document.querySelectorAll('.zoom-container');
-
-    zoomContainers.forEach(container => {
-        const img = container.querySelector('img');
-
-        // Инициализация Panzoom для каждого изображения
-        const panzoomInstance = Panzoom(img, {
-            maxScale: 3, // Максимальный зум
-            contain: 'outside' // Позволяет перемещать изображение за пределы контейнера
-        });
-
-        // Обработчик для клика по изображению (зум)
-        container.addEventListener('click', function() {
-            if (panzoomInstance.getScale() === 1) {
-                panzoomInstance.zoomIn(); // Увеличить изображение
-                img.style.cursor = 'zoom-out'; // Меняем курсор на "уменьшить"
-            } else {
-                panzoomInstance.zoomOut(); // Уменьшить изображение
-                img.style.cursor = 'zoom-in'; // Возвращаем курсор на "увеличить"
-            }
-        });
     });
 });
-});  
-});
+
