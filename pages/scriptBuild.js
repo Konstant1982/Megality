@@ -51,7 +51,7 @@ inner.on('touchmove', (e) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.originalEvent.touches[0].pageX - inner.position().left; // Текущая позиция касания
-    const walk = (x - startX) * 2; // Вычисляем расстояние перетаскивания
+    const walk = (x - startX) * 1.2; // Вычисляем расстояние перетаскивания
     inner.scrollLeft(scrollLeft - walk);
 });
 });
