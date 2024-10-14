@@ -87,13 +87,14 @@ body {
 
 .carousel-item {
     transition: height 0.5s ease-in-out;
+    height: auto; /* Высота элементов карусели */
 }
 
 carousel-inner {
-    display: flex; /* Включаем Flexbox */
+    display: block; /* Для вертикального размещения элементов */
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
-    height: 100%; /* Высота 100% от родительского элемента */
+    max-height: none; /* Убираем ограничение по высоте */
 }
 
 .carousel-inner img {
