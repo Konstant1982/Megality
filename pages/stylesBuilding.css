@@ -96,7 +96,7 @@ body {
 }
 
 .carousel-inner {
-    display: flex; /* Flexbox для управления размещением элементов */
+    display: block;
     flex-direction: column; /* Вертикальное размещение элементов */
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
