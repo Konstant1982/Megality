@@ -7,17 +7,17 @@ $(document).ready(function () {
         // Инициализация Panzoom для каждого изображения
         const panzoomInstance = Panzoom(img, {
             maxScale: 3, // Максимальный зум
-            contain: 'outside' // Разрешаем перемещение изображения за пределы контейнера
+            contain: 'outside' // Разрешаем перемещение за пределы контейнера
         });
 
         // Обработчик для клика по изображению (зум)
         container.addEventListener('click', function () {
             if (panzoomInstance.getScale() === 1) {
-                panzoomInstance.zoomIn(); // Увеличить изображение
-                img.style.cursor = 'zoom-out'; // Меняем курсор на "уменьшить"
+                panzoomInstance.zoomIn();
+                img.style.cursor = 'zoom-out';
             } else {
-                panzoomInstance.zoomOut(); // Уменьшить изображение
-                img.style.cursor = 'zoom-in'; // Возвращаем курсор на "увеличить"
+                panzoomInstance.zoomOut();
+                img.style.cursor = 'zoom-in';
             }
         });
     });
