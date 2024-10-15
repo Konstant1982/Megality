@@ -80,9 +80,10 @@ body {
 /* Карусель */
 .carousel-section {
     position: relative;
+    width: 80vw; /* Ограничиваем ширину карусели до 80% от ширины окна */
     height: 100vh; /* Занимает весь видимый экран */
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */     
+    margin: 0 auto; /* Центрируем карусель по горизонтали */
+    overflow: hidden; /* Избегаем прокрутки и обрезки */    
 }    
 
 .carousel-item {
@@ -150,14 +151,15 @@ body {
     overflow: hidden; /* Скрываем содержимое за пределами контейнера */
     position: relative;
     width: 100%;
-    height: 100vh; /* Контейнер занимает высоту экрана */
+    height: 100%;
 }
 
 .zoom-container img {
     transition: transform 0.3s ease; /* Гладкая анимация зума */
-    width: 100%; /* Чтобы изображение изначально занимало всю ширину */
-    height: auto;
+    width: auto; 
+    height: 100%;
     max-width: none; /* Снимаем ограничение по максимальной ширине */
+    object-fit: contain; /* Убедимся, что изображение влезает в контейнер */
     cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
 
