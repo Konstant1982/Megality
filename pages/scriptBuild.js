@@ -9,28 +9,27 @@ $(document).ready(function () {
 
             // Убедимся, что Panzoom не инициализируется повторно
             if (!img.panzoomInitialized) {
-                const originalHeight = img.naturalHeight; // Оригинальная высота изображения
-                const maxScale = 1.5; // Масштаб до 150%
-                
                 const panzoomInstance = Panzoom(img, {
-                    maxScale: maxScale, // Максимальный зум до 150%
-                    contain: 'outside' // Разрешаем перемещение за пределы контейнера
+                    maxScale: 1.5, // Максимальный зум до 150%
+                    contain: 'outside', // Разрешаем перемещение за пределы контейнера
+                    onPan: function() {
+                        img.style.cursor = 'move'; // Меняем курсор при перемещении
+                    },
+                    onZoom: function() {
+                        if (panzoomInstance.getScale() === 1) {
+                            img.style.cursor = 'zoom-in'; // Меняем курсор при нормальном размере
+                        } else {
+                            img.style.cursor = 'zoom-out'; // Меняем курсор при увеличенном размере
+                        }
+                    }
                 });
 
                 container.addEventListener('click', function () {
                     const currentScale = panzoomInstance.getScale();
                     if (currentScale === 1) {
                         panzoomInstance.zoomIn();
-                        img.style.cursor = 'zoom-out';
                     } else {
                         panzoomInstance.zoomOut();
-                        img.style.cursor = 'zoom-in';
-                    }
-                });
-
-                img.addEventListener('mousedown', function (e) {
-                    if (panzoomInstance.getScale() > 1) {
-                        panzoomInstance.pan(e.pageX, e.pageY);
                     }
                 });
 
