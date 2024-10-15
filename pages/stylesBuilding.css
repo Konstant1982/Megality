@@ -161,3 +161,7 @@ body {
     cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
 
+.zoom-container img[style*="transform"] {
+    cursor: move; /* Меняем курсор на "перемещение" при активном зуме */
+}
+
