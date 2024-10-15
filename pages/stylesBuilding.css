@@ -76,8 +76,7 @@ body {
 .carousel-section {
     position: relative;
     height: 100vh; /* Занимает весь видимый экран */
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    overflow-x: hidden; /* Отключаем горизонтальную прокрутку */     
+    overflow: hidden; /* Отключаем прокрутку, чтобы избежать излишнего прокручивания */
 }    
 
 @media (min-width: 992px) {
@@ -88,50 +87,26 @@ body {
 }
 
 .carousel-item {
-    transition: height 0.5s ease-in-out;
     width: 100%; /* Обеспечиваем полное использование ширины экрана */
     height: 100vh; /* Высота элементов карусели */
     position: relative;
     overflow: hidden; /* Скрываем лишнее содержимое */
-    flex: 0 0 auto; /* Элементы карусели не растягиваются */
 }
 
 .carousel-inner {
-    display: block;
+    display: flex; /* Используем flex для горизонтального размещения элементов */
     flex-direction: column; /* Вертикальное размещение элементов */
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
-    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    height: 100%; /* Задаем высоту 100% для внутреннего контейнера */
     scroll-behavior: smooth; /* Гладкая прокрутка */
 }
 
-.carousel-caption {
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-caption h5 {
-    font-size: 2.5rem; /* Размер заголовка */
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.carousel-caption p {
-    font-size: 1.25rem; /* Размер текста */
-}
-
-/* Контролы карусели */
-.carousel-control-prev, .carousel-control-next {
-    width: 15%;
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-    border-radius: 50%;
+.carousel-inner img {
+    width: 100%; /* Занимает всю ширину */
+    height: auto; /* Высота автоматически, чтобы сохранить пропорции */
+    max-height: 150%; /* Ограничиваем высоту в пределах 150% */
+    object-fit: cover; /* Масштабируем изображение для заполнения контейнера */
 }
 
 /* Контейнер для зума */
@@ -150,6 +125,3 @@ body {
     cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
 
-.zoom-container img[style*="transform"] {
-    cursor: move; /* Меняем курсор на "перемещение" при активном зуме */
-}
