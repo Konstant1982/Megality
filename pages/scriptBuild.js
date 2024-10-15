@@ -1,33 +1,47 @@
 $(document).ready(function () {
-    const zoomContainers = document.querySelectorAll('.zoom-container');
+    function initializePanzoomForVisibleImage() {
+        // Инициализация Panzoom только для видимого изображения
+        const activeItem = document.querySelector('.carousel-item.active');
+        const zoomContainers = activeItem.querySelectorAll('.zoom-container');
 
-    zoomContainers.forEach(container => {
-        const img = container.querySelector('img');
+        zoomContainers.forEach(container => {
+            const img = container.querySelector('img');
 
-        // Инициализация Panzoom для каждого изображения
-        const panzoomInstance = Panzoom(img, {
-            maxScale: 3, // Максимальный зум
-            contain: 'outside' // Разрешаем перемещение за пределы контейнера
-        });
+            // Убедимся, что Panzoom не инициализируется повторно
+            if (!img.panzoomInitialized) {
+                const panzoomInstance = Panzoom(img, {
+                    maxScale: 3, // Максимальный зум
+                    contain: 'outside' // Разрешаем перемещение за пределы контейнера
+                });
 
-        // Обработчик для клика по изображению (зум)
-        container.addEventListener('click', function () {
-            const currentScale = panzoomInstance.getScale();
-            if (currentScale === 1) {
-                panzoomInstance.zoomIn();
-                img.style.cursor = 'zoom-out';
-            } else {
-                panzoomInstance.zoomOut();
-                img.style.cursor = 'zoom-in';
+                container.addEventListener('click', function () {
+                    const currentScale = panzoomInstance.getScale();
+                    if (currentScale === 1) {
+                        panzoomInstance.zoomIn();
+                        img.style.cursor = 'zoom-out';
+                    } else {
+                        panzoomInstance.zoomOut();
+                        img.style.cursor = 'zoom-in';
+                    }
+                });
+
+                img.addEventListener('mousedown', function (e) {
+                    if (panzoomInstance.getScale() > 1) {
+                        panzoomInstance.pan(e.pageX, e.pageY);
+                    }
+                });
+
+                img.panzoomInitialized = true; // Флаг, что Panzoom уже инициализирован для этого изображения
             }
         });
+    }
 
-        // Добавление событий для перемещения изображения при увеличении
-        img.addEventListener('mousedown', function (e) {
-            if (panzoomInstance.getScale() > 1) {
-                panzoomInstance.pan(e.pageX, e.pageY);
-            }
-        });
+    // Инициализируем Panzoom для первого видимого изображения
+    initializePanzoomForVisibleImage();
+
+    // Добавляем обработчик для событий смены слайдов карусели
+    $('.carousel').on('slid.bs.carousel', function () {
+        initializePanzoomForVisibleImage(); // Инициализируем Panzoom при каждом новом активном слайде
     });
 
     // Код для перетаскивания карусели
