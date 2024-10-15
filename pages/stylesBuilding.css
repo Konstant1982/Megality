@@ -85,6 +85,13 @@ body {
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */     
 }    
 
+@media (min-width: 992px) {
+    .carousel-section {
+        width: 80vw; /* Устанавливаем ширину контейнера на 80% для десктопа */
+        margin: 0 auto; /* Центрируем контейнер */
+    }
+}
+
 .carousel-item {
     transition: height 0.5s ease-in-out;
     width: 100%; /* Обеспечиваем полное использование ширины экрана */
