@@ -3,7 +3,6 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    margin-top: 0;
 }
 
 /* Шапка и меню */
@@ -13,11 +12,9 @@ body {
     }
 }
 
-
-
 .site-header {
     background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
-    padding: 0px 0;
+    padding: 0;
     position: fixed; /* Фиксированное положение */
     width: 100%;
     z-index: 1000; /* Переопределяет другие элементы на странице */  
@@ -53,14 +50,12 @@ body {
     color: #ff8700;
 }
 
-
 .dropdown-item {
     color: #fff;
 }
 
 .dropdown-item:hover {
-	display: block;
-    background-color: #333;
+    background-color: #333; /* Цвет фона при наведении */
 }
 
 /* Логотип */
@@ -87,7 +82,7 @@ body {
 
 @media (min-width: 992px) {
     .carousel-section {
-        width: 70vw; /* Устанавливаем ширину контейнера на 80% для десктопа */
+        width: 70vw; /* Устанавливаем ширину контейнера на 70% для десктопа */
         margin: 0 auto; /* Центрируем контейнер */
     }
 }
@@ -101,27 +96,13 @@ body {
     flex: 0 0 auto; /* Элементы карусели не растягиваются */
 }
 
-.carousel-item img {
-  max-width: 100%; /* Адаптивная ширина изображения */
-  height: auto; 
-    
-}
-
 .carousel-inner {
     display: block;
     flex-direction: column; /* Вертикальное размещение элементов */
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
-    max-height: auto; /* Ограничиваем высоту карусели */
     overflow-y: auto; /* Добавляем вертикальную прокрутку */
     scroll-behavior: smooth; /* Гладкая прокрутка */
-}
-
-.carousel-inner img {
-    width: 100%; /* Занимает всю ширину */
-    height: 100%; /* Высота автоматически, чтобы сохранить пропорции */
-    max-height: 100%; /* Ограничиваем высоту в пределах контейнера */
-    object-fit: cover; /* Масштабируем изображение для заполнения контейнера */
 }
 
 .carousel-caption {
@@ -153,6 +134,7 @@ body {
     border-radius: 50%;
 }
 
+/* Контейнер для зума */
 .zoom-container {
     overflow: hidden; /* Скрываем содержимое за пределами контейнера */
     position: relative;
@@ -163,7 +145,7 @@ body {
 .zoom-container img {
     transition: transform 0.3s ease; /* Гладкая анимация зума */
     width: 100%; /* Чтобы изображение изначально занимало всю ширину */
-    height: auto;
+    height: auto; /* Высота автоматически, чтобы сохранить пропорции */
     max-width: none; /* Снимаем ограничение по максимальной ширине */
     cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
