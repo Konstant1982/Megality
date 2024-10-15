@@ -12,7 +12,8 @@ $(document).ready(function () {
 
         // Обработчик для клика по изображению (зум)
         container.addEventListener('click', function () {
-            if (panzoomInstance.getScale() === 1) {
+            const currentScale = panzoomInstance.getScale();
+            if (currentScale === 1) {
                 panzoomInstance.zoomIn();
                 img.style.cursor = 'zoom-out';
             } else {
@@ -20,10 +21,16 @@ $(document).ready(function () {
                 img.style.cursor = 'zoom-in';
             }
         });
-    });
-});
 
-    // Остальной код для перетаскивания карусели (если нужен)
+        // Перемещение изображения при увеличении
+        img.addEventListener('mousedown', function (e) {
+            if (panzoomInstance.getScale() > 1) {
+                panzoomInstance.pan(e.pageX, e.pageY);
+            }
+        });
+    });
+
+    // Код для перетаскивания карусели
     let isDragging = false;
     let startY;
     let scrollTop;
@@ -50,4 +57,3 @@ $(document).ready(function () {
         inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
     });
 });
-
