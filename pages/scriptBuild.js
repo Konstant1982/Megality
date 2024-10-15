@@ -9,8 +9,11 @@ $(document).ready(function () {
 
             // Убедимся, что Panzoom не инициализируется повторно
             if (!img.panzoomInitialized) {
+                const originalHeight = img.naturalHeight; // Оригинальная высота изображения
+                const maxScale = 1.5; // Масштаб до 150%
+                
                 const panzoomInstance = Panzoom(img, {
-                    maxScale: 5, // Максимальный зум
+                    maxScale: maxScale, // Максимальный зум до 150%
                     contain: 'outside' // Разрешаем перемещение за пределы контейнера
                 });
 
