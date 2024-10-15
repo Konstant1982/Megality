@@ -96,8 +96,7 @@ body {
 .carousel-item img {
   max-width: 100%; /* Адаптивная ширина изображения */
   height: auto; 
-  max-height: 100%; /* Ограничиваем высоту изображения */
-  object-fit: cover; /* Масштабируем изображение для заполнения контейнера */
+    
 }
 
 .carousel-inner {
@@ -155,6 +154,8 @@ body {
 
 .zoom-container img {
     transition: transform 0.3s ease; /* Гладкая анимация зума */
+    width: 100%; /* Чтобы изображение изначально занимало всю ширину */
+    height: auto;
     cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
 
