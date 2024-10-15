@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
         });
 
-        // Перемещение изображения при увеличении
+        // Добавление событий для перемещения изображения при увеличении
         img.addEventListener('mousedown', function (e) {
             if (panzoomInstance.getScale() > 1) {
                 panzoomInstance.pan(e.pageX, e.pageY);
