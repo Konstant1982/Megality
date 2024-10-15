@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Инициализация Panzoom сразу после загрузки страницы
     const zoomContainers = document.querySelectorAll('.zoom-container');
 
     zoomContainers.forEach(container => {
@@ -8,7 +7,7 @@ $(document).ready(function () {
         // Инициализация Panzoom для каждого изображения
         const panzoomInstance = Panzoom(img, {
             maxScale: 3, // Максимальный зум
-            contain: 'outside' // Позволяет перемещать изображение за пределы контейнера
+            contain: 'outside' // Разрешаем перемещение изображения за пределы контейнера
         });
 
         // Обработчик для клика по изображению (зум)
@@ -22,6 +21,7 @@ $(document).ready(function () {
             }
         });
     });
+});
 
     // Остальной код для перетаскивания карусели (если нужен)
     let isDragging = false;
