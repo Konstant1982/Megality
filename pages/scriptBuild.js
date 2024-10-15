@@ -10,7 +10,7 @@ $(document).ready(function () {
             // Убедимся, что Panzoom не инициализируется повторно
             if (!img.panzoomInitialized) {
                 const panzoomInstance = Panzoom(img, {
-                    maxScale: 3, // Максимальный зум
+                    maxScale: 5, // Максимальный зум
                     contain: 'outside' // Разрешаем перемещение за пределы контейнера
                 });
 
