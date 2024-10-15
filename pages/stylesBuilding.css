@@ -87,6 +87,7 @@ body {
 
 .carousel-item {
     transition: height 0.5s ease-in-out;
+    width: 100%; /* Обеспечиваем полное использование ширины экрана */
     height: 100vh; /* Высота элементов карусели */
     position: relative;
     overflow: hidden; /* Скрываем лишнее содержимое */
@@ -149,13 +150,14 @@ body {
     overflow: hidden; /* Скрываем содержимое за пределами контейнера */
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Контейнер занимает высоту экрана */
 }
 
 .zoom-container img {
     transition: transform 0.3s ease; /* Гладкая анимация зума */
     width: 100%; /* Чтобы изображение изначально занимало всю ширину */
     height: auto;
+    max-width: none; /* Снимаем ограничение по максимальной ширине */
     cursor: zoom-in; /* Курсор, показывающий возможность зума */
 }
 
