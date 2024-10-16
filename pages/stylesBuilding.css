@@ -153,6 +153,7 @@ body {
     border-radius: 50%;
 }
 
+/* Panzoom */
 .zoom-container {
     overflow: hidden; /* Скрываем содержимое за пределами контейнера */
     position: relative;
@@ -170,4 +171,42 @@ body {
 
 .zoom-container img[style*="transform"] {
     cursor: move; /* Меняем курсор на "перемещение" при активном зуме */
+}
+
+/* Manual */
+
+/* Секция для мануала */
+.manual-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Иконка папки */
+.folder-icon {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.folder-icon img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.folder-icon img:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+/* Поле с текстом мануала */
+.manual-text {
+    display: none; /* Скрываем текст по умолчанию */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
