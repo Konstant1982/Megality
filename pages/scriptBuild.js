@@ -72,4 +72,14 @@ $(document).ready(function () {
         const walk = (y - startY); // Вычисляем расстояние перемещения
         inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
     });
+
+   $(document).ready(function () {
+    $('#manualFolder').on('click', function () {
+        const manualText = $('#manualText');
+
+        // Переключаем отображение текста
+        manualText.slideToggle(300);  // Анимация появления/скрытия
+    });
+});
+    
 });
