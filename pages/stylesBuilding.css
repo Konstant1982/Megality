@@ -177,15 +177,15 @@ body {
 
 /* Секция для мануала */
 .manual-section {
-    text-align: center;
-    margin-top: 20px;
+    position: relative;
 }
 
 /* Иконка папки */
 .folder-icon {
-    display: inline-block;
+    position: absolute;
+    bottom: 20px; /* Расположение на 20px выше нижнего края карусели */
+    left: 15%; /* Смещение от левого края на 15% */
     cursor: pointer;
-    margin-bottom: 10px;
 }
 
 .folder-icon img {
