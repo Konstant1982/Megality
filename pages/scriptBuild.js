@@ -1,25 +1,23 @@
 $(document).ready(function () {
+    // Инициализация Panzoom для изображений
     function initializePanzoomForVisibleImage() {
-        // Инициализация Panzoom только для видимого изображения
         const activeItem = document.querySelector('.carousel-item.active');
         const zoomContainers = activeItem.querySelectorAll('.zoom-container');
 
         zoomContainers.forEach(container => {
             const img = container.querySelector('img');
-
-            // Убедимся, что Panzoom не инициализируется повторно
             if (!img.panzoomInitialized) {
                 const panzoomInstance = Panzoom(img, {
-                    maxScale: 1.5, // Максимальный зум до 150%
-                    contain: 'outside', // Разрешаем перемещение за пределы контейнера
+                    maxScale: 1.5,
+                    contain: 'outside',
                     onPan: function() {
-                        img.style.cursor = 'move'; // Меняем курсор при перемещении
+                        img.style.cursor = 'move';
                     },
                     onZoom: function() {
                         if (panzoomInstance.getScale() === 1) {
-                            img.style.cursor = 'zoom-in'; // Меняем курсор при нормальном размере
+                            img.style.cursor = 'zoom-in';
                         } else {
-                            img.style.cursor = 'zoom-out'; // Меняем курсор при увеличенном размере
+                            img.style.cursor = 'zoom-out';
                         }
                     }
                 });
@@ -33,53 +31,46 @@ $(document).ready(function () {
                     }
                 });
 
-                img.panzoomInitialized = true; // Флаг, что Panzoom уже инициализирован для этого изображения
+                img.panzoomInitialized = true;
             }
         });
     }
 
-    // Инициализируем Panzoom для первого видимого изображения
     initializePanzoomForVisibleImage();
 
-    // Добавляем обработчик для событий смены слайдов карусели
     $('.carousel').on('slid.bs.carousel', function () {
-        initializePanzoomForVisibleImage(); // Инициализируем Panzoom при каждом новом активном слайде
+        initializePanzoomForVisibleImage();
     });
 
-    // Код для перетаскивания карусели
+    // Перетаскивание карусели
     let isDragging = false;
     let startY;
     let scrollTop;
-
     const inner = $('.carousel-inner');
 
     inner.on('mousedown touchstart', (e) => {
         isDragging = true;
         const pageY = e.type === 'mousedown' ? e.pageY : e.originalEvent.touches[0].pageY;
-        startY = pageY - inner.position().top; // Запоминаем начальную вертикальную позицию
-        scrollTop = inner.scrollTop(); // Получаем текущее значение вертикальной прокрутки
+        startY = pageY - inner.position().top;
+        scrollTop = inner.scrollTop();
     });
 
     inner.on('mouseleave mouseup touchend', () => {
-        isDragging = false; // Останавливаем перетаскивание
+        isDragging = false;
     });
 
     inner.on('mousemove touchmove', (e) => {
-        if (!isDragging) return; // Если не нажато, ничего не делаем
-        e.preventDefault(); // Предотвращаем выделение текста
+        if (!isDragging) return;
+        e.preventDefault();
         const pageY = e.type === 'mousemove' ? e.pageY : e.originalEvent.touches[0].pageY;
-        const y = pageY - inner.position().top; // Текущая вертикальная позиция
-        const walk = (y - startY); // Вычисляем расстояние перемещения
-        inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
+        const y = pageY - inner.position().top;
+        const walk = (y - startY);
+        inner.scrollTop(scrollTop - walk);
     });
 
-   $(document).ready(function () {
+    // Анимация появления/скрытия текста мануала
     $('#manualFolder').on('click', function () {
         const manualText = $('#manualText');
-
-        // Переключаем отображение текста
-        manualText.slideToggle(300);  // Анимация появления/скрытия
+        manualText.slideToggle(300);  // Плавная анимация
     });
-});
-    
 });
