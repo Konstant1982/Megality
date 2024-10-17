@@ -186,21 +186,21 @@ body {
 
 /* Иконка папки */
 .folder-icon {
-    position: fixed; /* Изменено на fixed для фиксации относительно окна браузера */
-    bottom: 20px;
-    left: 20px; /* Переместим левее, чтобы не перекрывалась */
+    position: absolute; /* Ставим абсолютное позиционирование */
+    bottom: 20px; /* Расположение от нижнего края */
+    left: 20px; /* Смещение от левого края */
     cursor: pointer;
-    z-index: 1200; /* Увеличим z-index, чтобы находилась выше других элементов */
+    z-index: 9999; /* Максимальный z-index */
 }
 
 .folder-icon img {
-    width: 60px; /* Немного увеличим размер */
+    width: 60px; /* Увеличенный размер */
     height: auto;
     transition: transform 0.3s ease;
 }
 
 .folder-icon img:hover {
-    transform: scale(1.2); /* Увеличение при наведении */
+    transform: scale(1.2); /* Эффект увеличения при наведении */
 }
 
 /* Поле с текстом мануала */
