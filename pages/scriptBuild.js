@@ -47,10 +47,22 @@ $(document).ready(function () {
 
         if (activeIndex >= 0 && activeIndex <= 11) {
             manualText.html(`
-                <h3>Manual 1: Laminating the fuselage</h3>
-                <p>Content for slides 1 to 12.</p>
-                <p>1. Apply wax and PVA for fuselage lamination.</p>
-                <p>2. Use gelcoat and other materials in specific order.</p>
+                <h3>Manual laminating the fuselage</h3>
+    <p>0.  4 layers of wax and 2 layers of alcohol-based PVA.</p>  
+    <p>1. 1st-2nd layer of gelcoat (250 ml). Increase the dye amount by 3 times (1 kg/30 mg of dye). Gelcoat consists of 50% epoxy resin and 50% aerosil by volume (epoxy resin).</p>
+    <p>2. 3rd layer of gelcoat, apply paste to the edges and corners, then immediately lay down (120 ml).</p>
+    <p>3. 50 g/m² Plain.</p>
+    <p>4. 100 g/m² Twill.</p>
+    <p>Epoxy resin: + 60 ml.</p>
+    <p>5. 150 g/m² Plain.</p>
+    <p>6. 500 g/m² Plain — wing joint (increase to 650 g/m²).</p>
+    <p>Epoxy resin: + 60 ml.</p>
+    <p>7. 300 g/m² x 15 mm — joint edge.</p>
+    <p>Epoxy resin: + 40 ml.</p>
+    <p>8. 100 g/m² Twill.</p>
+    <p>9. 50 g/m² Plain.</p>
+    <p>10. Release fabric.</p>
+    <p>11. Vacuum.</p>
             `);
         } else if (activeIndex >= 12 && activeIndex <= 29) {
             manualText.html(`
