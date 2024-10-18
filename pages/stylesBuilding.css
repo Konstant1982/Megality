@@ -115,8 +115,9 @@ body {
     align-items: center; /* Центрируем по вертикали */
     justify-content: center; /* Центрируем по горизонтали */
     max-height: auto; /* Ограничиваем высоту карусели */
-    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    overflow-y: scroll; /* Разрешаем вертикальную прокрутку */
     scroll-behavior: smooth; /* Гладкая прокрутка */
+    touch-action: pan-y; /* Разрешаем вертикальную прокрутку без перехвата касания */
 }
 
 .carousel-inner img {
