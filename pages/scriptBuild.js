@@ -40,6 +40,33 @@ $(document).ready(function () {
 
     $('.carousel').on('slid.bs.carousel', function () {
         initializePanzoomForVisibleImage();
+
+        // Определение активного слайда и отображение соответствующего мануала
+        let activeIndex = $('.carousel-item.active').index();
+        const manualText = $('#manualText');
+
+        if (activeIndex >= 0 && activeIndex <= 11) {
+            manualText.html(`
+                <h3>Manual 1: Laminating the fuselage</h3>
+                <p>Content for slides 1 to 12.</p>
+                <p>1. Apply wax and PVA for fuselage lamination.</p>
+                <p>2. Use gelcoat and other materials in specific order.</p>
+            `);
+        } else if (activeIndex >= 12 && activeIndex <= 29) {
+            manualText.html(`
+                <h3>Manual 2: Laminating process continuation</h3>
+                <p>Content for slides 13 to 30.</p>
+                <p>1. Apply additional layers of gelcoat.</p>
+                <p>2. Strengthen the wing joints with specific material.</p>
+            `);
+        } else if (activeIndex >= 30 && activeIndex <= 39) {
+            manualText.html(`
+                <h3>Manual 3: Final laminating steps</h3>
+                <p>Content for slides 31 to 40.</p>
+                <p>1. Complete the vacuum process.</p>
+                <p>2. Final touches and surface finishing.</p>
+            `);
+        }
     });
 
     // Перетаскивание карусели с условием для вертикальной прокрутки
