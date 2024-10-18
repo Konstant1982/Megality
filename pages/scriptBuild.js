@@ -66,10 +66,57 @@ $(document).ready(function () {
             `);
         } else if (activeIndex >= 12 && activeIndex <= 29) {
             manualText.html(`
-                <h3>Manual 2: Laminating process continuation</h3>
-                <p>Content for slides 13 to 30.</p>
-                <p>1. Apply additional layers of gelcoat.</p>
-                <p>2. Strengthen the wing joints with specific material.</p>
+                <h3>Manual 2: Laminating wings</h3>
+                  <h4>Left/Right Bottom wing console</h4>
+    <ol>
+        <li>0. 4 layers of wax and 2 layers of alcohol-based PVA.
+        <li>1. Epoxy gelcoat 25 ml x 4 + 25 hardener.
+            <ul>
+                <li>25 ml x 3 + 15 hardener (thickened).</li>
+            </ul>
+        </li>
+        <li>2. 50 g/m² Plain.</li>
+        <li>3. 100 g/m² Twill.
+            <ul>
+                <li>Front edge 15-30 mm.</li>
+            </ul>
+        </li>
+        <li>4. Epoxy resin 120 ml.</li>
+        <li>5. Carbon 80 g/m².
+            <ul>
+                <li>Front edge 15-50 mm.</li>
+            </ul>
+        </li>
+        <li>6. Epoxy resin 120 ml.</li>
+        <li>7. Abachi veneer 0.6 mm.</li>
+        <li>8. Epoxy resin 50 ml.</li>
+        <li>9. 150 g/m² Plain + reinforcement 1 m in length.</li>
+        <li>10. 90 ml resin + 30 ml.</li>
+        <li>11. Release fabric.</li>
+        <li>12. Vacuum. (thick rear edge, trim the excess!)</li>
+    </ol>
+    
+    <h4>Left/Right Top wing console</h4>
+    <ol>
+        <li>0. 4 layers of wax and 2 layers of alcohol-based PVA.
+        <li>1. Epoxy gelcoat 25 ml x 5.
+            <ul>
+                <li>25 ml x 2 (thickened).</li>
+            </ul>
+        </li>
+        <li>2. 50 g/m² Plain.</li>
+        <li>3. 100 g/m² Twill.</li>
+        <li>4. Epoxy resin 120 ml.</li>
+        <li>5. Carbon 80 g/m².</li>
+        <li>6. Epoxy resin 120 ml.</li>
+        <li>7. Abachi veneer.</li>
+        <li>8. Epoxy resin 3 x 25 ml.</li>
+        <li>9. 2 layers of 100 g/m² Twill.</li>
+        <li>10. Carbon 80 g/m² - 400 mm (wing-fuselage joint).</li>
+        <li>10. Release fabric.</li>
+        <li>11. Vacuum.</li>
+    </ol>
+</div>
             `);
         } else if (activeIndex >= 30 && activeIndex <= 39) {
             manualText.html(`
