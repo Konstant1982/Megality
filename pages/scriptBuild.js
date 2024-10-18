@@ -148,15 +148,12 @@ $(document).ready(function () {
     inner.on('mousemove touchmove', (e) => {
         if (!isDragging) return;
 
-        // Получаем текущее положение пальца
         const pageY = e.type === 'mousemove' ? e.pageY : e.originalEvent.touches[0].pageY;
-        const y = pageY - inner.position().top;
-        const walk = (y - startY);
+        const walk = pageY - inner.position().top;
         
-        // Если прокрутка по вертикали больше 10 пикселей, не позволяем прокрутку карусели
         if (Math.abs(walk) > 10) {
-            e.preventDefault(); // Предотвращаем выделение текста
-            inner.scrollTop(scrollTop - walk); // Устанавливаем новое значение вертикальной прокрутки
+            inner.scrollTop(scrollTop - walk);
+            e.preventDefault(); // Отключаем нежелательное поведение
         }
     });
 
