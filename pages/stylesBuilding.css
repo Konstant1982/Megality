@@ -105,6 +105,7 @@ body {
 .carousel-item img {
   max-width: 100%; /* Адаптивная ширина изображения */
   height: auto; 
+  object-fit: contain; /* Изображение подстраивается под размеры контейнера */
     
 }
 
