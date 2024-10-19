@@ -157,9 +157,14 @@ $(document).ready(function () {
         }
     });
 
-    // Анимация появления/скрытия текста мануала
+    // Анимация появления/скрытия текста мануала и прокрутка вниз
     $('#manualFolder').on('click', function () {
         const manualText = $('#manualText');
-        manualText.slideToggle(300);  // Плавная анимация
+        manualText.slideToggle(300, function () {
+            if (manualText.is(':visible')) {
+                // Прокрутка к тексту мануала
+                manualText[0].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 });
