@@ -160,11 +160,16 @@ $(document).ready(function () {
     // Анимация появления/скрытия текста мануала и прокрутка вниз
     $('#manualFolder').on('click', function () {
         const manualText = $('#manualText');
-        manualText.slideToggle(300, function () {
-            if (manualText.is(':visible')) {
-                // Прокрутка к тексту мануала
-                manualText[0].scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+        if (manualText.is(':visible')) {
+            // Если текст мануала уже виден, просто прокрутить к нему
+            manualText[0].scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Плавно показать текст мануала, затем прокрутить
+            manualText.slideToggle(300, function () {
+                if (manualText.is(':visible')) {
+                    manualText[0].scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
     });
 });
