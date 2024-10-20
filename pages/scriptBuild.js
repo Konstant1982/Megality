@@ -158,14 +158,18 @@ $(document).ready(function () {
     });
 
     // Анимация появления/скрытия текста мануала и прокрутка вниз
-   $('#manualFolder').on('click', function () {
-    const manualText = $('#manualText');
-
-    // Плавно переключаем видимость текста мануала
-    manualText.slideToggle(300, function () {
-        // Прокручиваем только если текст мануала виден
+    $('#manualFolder').on('click', function () {
+        const manualText = $('#manualText');
         if (manualText.is(':visible')) {
+            // Если текст мануала уже виден, просто прокрутить к нему
             manualText[0].scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Плавно показать текст мануала, затем прокрутить
+            manualText.slideToggle(300, function () {
+                if (manualText.is(':visible')) {
+                    manualText[0].scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         }
     });
 });
