@@ -64,7 +64,7 @@ $(document).ready(function () {
     <p>10. Release fabric.</p>
     <p>11. Vacuum.</p>
             `);
-        } else if (activeIndex >= 12 && activeIndex <= 29) {
+        } else if (activeIndex >= 12 && activeIndex <= 39) {
             manualText.html(`
                 <h3>Manual 2: Laminating wings</h3>
                   <h4>Left/Right Bottom wing console</h4>
@@ -118,7 +118,7 @@ $(document).ready(function () {
     </ol>
 </div>
             `);
-        } else if (activeIndex >= 30 && activeIndex <= 39) {
+        } else if (activeIndex >= 40 && activeIndex <= 49) {
             manualText.html(`
                 <h3>Manual 3: Final laminating steps</h3>
                 <p>Content for slides 31 to 40.</p>
